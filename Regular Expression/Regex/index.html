@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>RegEx Form</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>New User Signup</h1>
+        <form name="form" action=" ">
+
+            <input type="text" name="username" placeholder="username"><small id="s1" style="color: red;"></small>
+            <p>Username must be  and contain 5 - 12 characters</p>
+
+            <input type="text" name="email" placeholder="email"><small id="s2" style="color: red;"></small>
+            <p>Email must be a valid address, e.g. me@mydomain.com</p>
+
+            <input type="password" name="password" placeholder="password"><small id="s5" style="color: red;"></small>
+            <p>Password must alphanumeric (@, _ and - are also allowed) and be 8 - 20 characters</p>
+
+            <input type="text" name="telephone" placeholder="telephone"><small id="s3" style="color: red;"></small>
+            <p>Telephone must be a valid PAK telephone number (11 digits)</p>
+
+            <input type="text" name="slug" placeholder="profile slug"><small id="s4" style="color: red;"></small>
+            <p>Slug must contain only lowercase letters, numbers and hyphens and be 8 - 20 characters</p>
+
+        </form>
+        <script type="text/javascript" src="validation.js"></script>
+    </body>
+</html>
