@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage</title>
+</head>
+<body>
+    <h1>Store Arrays in Local Storage</h1>
+
+</body>
+
+<script>
+
+const list =[
+
+{name : "Fareena" , study : "SE"},
+
+{name : "Maira" , study : "Inter"},
+
+{name : "Mahrukh" , study : "DOW"},
+
+];
+
+//convert JavaScript array of objects into JSON string
+
+console.log(JSON.stringify(list))
+
+//Store in LOcalStorage
+
+localStorage.setItem('list' , JSON.stringify(list))
+
+
+// Get from LocalStorage
+var stored = localStorage.getItem('list')
+
+console.log("Stored array in the form of JSON is:" , stored)
+
+console.log("Stored in the form of ARRAY is:" ,JSON.parse(stored) )
+
+//Remove from LocalStorage
+
+localStorage.clear()
+
+let remove = localStorage.getItem('list')
+console.log(remove)
+
+</script>
+
+</html>
