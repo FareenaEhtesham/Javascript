@@ -1,0 +1,22 @@
+
+body{
+
+    padding: 0px;
+    margin: 0px;
+}
+.clock{
+    font-size: 42px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.132em;
+
+    font-style: normal;background-color: #000000;
+
+    width: 50%;
+
+    position: relative;
+
+    color: white;
+
+}
