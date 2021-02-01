@@ -1,0 +1,30 @@
+
+
+<select id="select" name="anch1">
+    <option value="0">Appetizer</option>
+    <option value="20" data-cost="5">Option 1</option>
+    <option value="30" data-cost="10">Option 2</option>
+    <option value="40" data-cost="20">Option 3</option>
+    <option value="50" data-cost="50">Option 4</option>
+</select>
+
+<p id='sum'>Calorie Total</p>
+
+<p id='cost'>Sum</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+$('#select').on('change', function(){
+    var sum = 0;
+    var cost = 0;
+
+    $('#select :selected').each(function() {
+        sum += Number($(this).val());
+        cost += Number($(this).data('cost'));
+    });
+    $('#sum').html(sum);
+    $('#cost').html(cost);
+});
+
+</script>
