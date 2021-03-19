@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Ajax</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+    <div id="example">
+        <button>CLICK ME!</button>
+    </div>
+
+    <div id="status"></div>
+
+    <div id="result">
+        
+    </div>
+    <div id="dummy_data">
+        <h2>TITLE:</h2>
+        <p>Lorem ipsum</p>
+        <h2>BODY:</h2>
+        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly
+            used to demonstrate the visual form of a document or a typeface without 
+            relying on meaningful content. 
+            Lorem ipsum may be used as a placeholder before final copy is available.
+        </p>
+    </div>
+    
+</body>
+
+<script>
+
+    $(document).ready(function(){
+        $('#example').on('click', function(){
+            $.ajax('result.html',{
+                //add a bunch of proprties in an object
+                beforeSend:function(){
+                    $('#status').text('loading....');
+                }
+            })
+            .done(function(response){
+                $('#result').html(response);
+            })
+            .always(function(){
+                $('#status').text('completed');
+            });
+        });
+        //example of getting json data
+        $.ajax('data.json', {
+            dataType:'json',
+            contentType:'application/json',
+            cache:false, //not taking previous data when updated
+        }).done(function(response){
+            console.log(response);
+            $.each(response , function(key,value){
+                $('#dummy_data').append(`
+                <h2>TITLE:</h2>
+                <p>`+value.title+`</p>
+                <h2>BODY:</h2>
+                <p>`+value.body+`</p>
+            `)
+            });   
+        });
+
+    });
+</script>
+</html>
